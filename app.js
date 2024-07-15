@@ -38,9 +38,9 @@ app.post('/send', (req, res) => {
     <h3>Contact Details</h3>
     <ul>
         <li>Name: ${req.body.name}</li>
+        <li>Phone: ${req.body.phone}</li>
         <li>Company: ${req.body.company}</li>
         <li>Email: ${req.body.email}</li>
-        <li>Phone: ${req.body.phone}</li>
     </ul>
     <h3>Message</h3>
     <p>${req.body.message}</p>
@@ -51,8 +51,8 @@ app.post('/send', (req, res) => {
       const info = await transporter.sendMail({
         from: 'Nodemailer Contact form <info@21twelve.africa>', // sender address
         to: "len@21twelve.africa, radka@21twelve.africa", // list of receivers
-        subject: "Node Contact Request", // Subject line
-        text: "Hello world?", // plain text body
+        subject: "Contact Form Request", // Subject line
+        text: "Hi", // plain text body
         html: output, // html body
       });
 

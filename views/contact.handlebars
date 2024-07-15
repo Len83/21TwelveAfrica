@@ -150,6 +150,7 @@
   </section>
   <!-- End header Area -->
 
+
   <section class="about-area about-five" id="about">
     <div class="container">
       <div class="row align-items-center">
@@ -338,28 +339,34 @@
           <div class="form-wrapper">
               <div class="contact-heading">
                 <h2 class="fw-bold">Let's Work Together<span> !</span></h2>
-                  <p class="text">Email Us: <a href="mailto:">info@21twelve.africa</a></p>
-                  <p class="text-whatsapp">Whatsapp: <span>(+27) 846 836 919</span></p>
               </div>
-              <form action="contact.handlebars" method="post" class="contact-form">
-                  <div class="input-wrap">
-                      <input class="contact-input" autocomplete="off" name="First Name" type="text" required>
-                      <label>First Name</label>
+
+              {{msg}}
+              
+              <form action="send" method="POST" class="contact-form">
+                  <div class="input-wrap w-70">
+                      <input id="name" class="contact-input" autocomplete="off" name="name" type="text" required>
+                      <label for="name">Name</label>
                       <i class="icon fa-solid fa-address-card"></i>
                   </div>
-                  <div class="input-wrap">
-                      <input class="contact-input" autocomplete="off" name="Last Name" type="text" required>
-                      <label>Last Name</label>
-                      <i class="icon fa-solid fa-address-card"></i>
+                  <div class="input-wrap w-70">
+                      <input id="phone" class="contact-input" autocomplete="off" name="phone" type="tel" required>
+                      <label for="phone">Phone number</label>
+                      <i class="icon fa-solid fa-envelope"></i>
                   </div>
                   <div class="input-wrap w-100">
-                      <input class="contact-input" autocomplete="off" name="Email" type="email" required>
-                      <label>Email</label>
+                      <input id="company" class="contact-input" autocomplete="off" name="company" type="text" required>
+                      <label for="company">Organization</label>
+                      <i class="icon fa-solid fa-address-card"></i>
+                  </div>
+                     <div class="input-wrap w-100">
+                      <input id="email" class="contact-input" autocomplete="off" name="email" type="email" required>
+                      <label for="email">Email</label>
                       <i class="icon fa-solid fa-envelope"></i>
                   </div>
                   <div class="input-wrap textarea w-100">
-                      <textarea name="Message" autocomplete="off" class="contact-input" required></textarea>
-                      <label>Message</label>
+                      <textarea name="message" id="message" autocomplete="off" class="contact-input" required></textarea>
+                      <label for="message">Message</label>
                       <i class="icon fa-solid fa-inbox"></i>
                   </div>
                   <div class="button">
@@ -383,14 +390,19 @@
   <footer class="footer">
     <div class="container">
         <div class="footer-content">
-            <div class="footer-logo">
+            <div class="footer-logo mb-3">
                 <img src="public/images/_21Twelve_Africa_Logo_V3 (trans&white_text).svg" alt="Logo">
                 <p class="text-footer">Tailored innovations, crafted for your world.</p>
+            </div>
+            <div class="footer-contacts mb-2">
+            <p class="text">Email Us: <a href="mailto:">info@21twelve.africa</a></p>
+            <p class="text-whatsapp">Whatsapp: <span>(+27) 846 836 919</span></p>
             </div>
             <div class="footer-social">
                 <a href="https://www.facebook.com/profile.php?id=61559161546365" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://www.linkedin.com/company/21-twelve-africa" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             </div>
+            
         </div>
         </footer>
 <!-- FOOTER END -->
@@ -445,7 +457,7 @@
 
 
   </script>
-  <script src="app.js"></script>
+  <script src="public/js/contact.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
