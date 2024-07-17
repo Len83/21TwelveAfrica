@@ -24,7 +24,7 @@ let transporter = nodemailer.createTransport({
   secure: true, // Use `true` for port 465, `false` for all other ports
   auth: {
     user: "info@21twelve.africa",
-    pass: "Ladysox101!!@",
+    pass: "LadyJane101!!@",
   },
 });
 
@@ -52,14 +52,11 @@ app.post('/send', (req, res) => {
         from: 'Nodemailer Contact form <info@21twelve.africa>', // sender address
         to: "len@21twelve.africa, radka@21twelve.africa", // list of receivers
         subject: "Contact Form Request", // Subject line
-        text: "Hi", // plain text body
+        text: "Contact Form", // plain text body
         html: output, // html body
       });
-
-      console.log("Message sent: %s", info.messageId);
       res.render('contact', { msg: 'Email has been sent' });
     } catch (error) {
-      console.error(error);
       res.status(500).send('Something went wrong.');
     }
   }
